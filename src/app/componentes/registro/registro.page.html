@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            <div class="ion-text-center">
+                registro
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <img class="icon" src="assets/icon/registro.png" alt="registro alternarivo">
+    <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name" id="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">correo electronico</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" id="ema"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">contraseña</ion-label>
+        <ion-input type="password" name="password" id="con" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="onSubmitRegister()" color="secondary" expand="block" class="espacios">
+        Resgistrarse
+    </ion-button>
+    <div class="espacioVertical"></div>
+
+    <ion-button expand="block" (click)="regresar()" class="fondoColor espacios">Ya tengo cuenta</ion-button>
+</ion-content>
