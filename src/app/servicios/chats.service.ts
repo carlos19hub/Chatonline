@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 
@@ -38,6 +38,7 @@ export class ChatsService {
   }
 
   sendMsgToFireBase( mensaje : Mensaje, chat_id : string){
+    mensaje.type = "text"
     this.db.collection('chatRoom').doc(chat_id).update({
       Messages : firebase.firestore.FieldValue.arrayUnion(mensaje),
     });

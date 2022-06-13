@@ -1,25 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
     <ion-toolbar color="tertiary">
         <ion-button fill="clear" slot="end" (click)="presentActionSheet()">
-            <ion-icon style="color:aliceblue; font-size: 25px" name="menu"></ion-icon>
+            <ion-icon style="color:aliceblue; font-size: 25px" name="menu">
+            </ion-icon>
         </ion-button>
         <ion-title>
-            My chat App
+            Sala de chats
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content [fullscreen]="true">
 
     <ion-list>
-        <ion-item *ngFor="let chat of chats" (click)="openChat(chat)" )>
+        <ion-item *ngFor="let chat of chats" (click)="openChat(chat)">
             <ion-avatar slot="start">
-                <ion-img [src]="chat.img"></ion-img>
+                <ion-img [src]="chat.img">
+                </ion-img>
             </ion-avatar>
             <ion-label>
-                <h2><b>{{chat.name}}</b></h2>
-
-                <p>{{chat.description}}</p>
+                <h2>
+                    <b>{{chat.name}}</b>
+                </h2>
+                <h3>{{chat.description}}</h3>
             </ion-label>
         </ion-item>
     </ion-list>

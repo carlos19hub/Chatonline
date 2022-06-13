@@ -16,7 +16,7 @@
 <ion-footer padding>
     <ion-item>
         <ion-textarea [(ngModel)]="msg" #area></ion-textarea>
-        <ion-button color="success" slot="end" onclick="sendMensaje()">
+        <ion-button color="success" slot="end" (click)="sendMensaje()">
             <ion-icon name="send">
             </ion-icon>
         </ion-button>

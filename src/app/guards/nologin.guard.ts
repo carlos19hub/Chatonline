@@ -19,12 +19,11 @@ export class NologinGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       return this.AFauth.authState.pipe(map(auth  => {
-        if(auth === undefined || auth === null){
-          
-          return false;
+        if(auth === undefined || auth === null){          
+          return true;
         }else{
           this.router.navigate(['/home']);
-          return true;
+          return false;
         }
     }));
   }
